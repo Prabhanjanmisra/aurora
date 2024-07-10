@@ -38,7 +38,7 @@ const OrderScreen = () => {
   const { userInfo } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    if (!errorPayPal && !loadingPayPal && paypalDispatch.clientId) {
+    if (!errorPayPal && !loadingPayPal && paypal.clientId) {
       const loadPayPalScript = async () => {
         paypalDispatch({
             type: "resetOptions",
