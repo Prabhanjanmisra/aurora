@@ -34,7 +34,7 @@ table th {
 
 .review h2 {
   font-size: 24px;
-  background: #f4f4f4;
+  background: #333333;
   padding: 10px;
   border: 1px solid #ddd;
 }
@@ -50,4 +50,43 @@ table th {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.aurora-outer {
+  background: linear-gradient(
+    45deg,
+    #40e0d0de 0%,
+    #dd8c00e9 30%,
+    #8d54ffc1 55%,
+    #32a6ffd3 68%,
+    #3f6fffde 79%,
+    #ff0080e9 100%
+  );
+  background-size: 200%;
+  animation: aurora 10s infinite;
+}
+
+@keyframes aurora {
+  0% {
+    background-position: left top;
+  }
+  25% {
+    background-position: right top;
+  }
+  50% {
+    background-position: right bottom;
+  }
+  75% {
+    background-position: left bottom;
+  }
+  100% {
+    background-position: left top;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .carousel-caption h2 {
+    font-size: 1rem;
+    text-align: left;
+  }
 }

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Row, Col, ListGroup, Image, Card, Button } from "react-bootstrap";
 import CheckoutStpes from "../components/CheckoutSteps";
-import { Toast, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Message from "../components/Message"
 import Loader from "../components/Loader"
 import { useCreateOrderMutation } from "../slices/ordersApiSlice";
@@ -114,7 +114,7 @@ const PlaceOrderScreen = () => {
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            {error && <Message variant='danger'>{error}</Message>}
+                            {error && <Message variant='danger'>{error?.data?.message}</Message>}
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Button type='button' className='btn-block' disabled={cart.cartItems.length === 0} onClick={placeOrderHandler}>
